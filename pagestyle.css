@@ -1,0 +1,68 @@
+*{
+margin:0;
+padding:0;
+box-size:border-box;
+}
+body
+{
+display:flex;
+justify-content:center;
+align-item:center;
+background: url( "p6.jpg")no-repeat;
+background-size:cover;
+}
+
+.logo
+{
+color:white;
+font-family:ravie;
+text-decoration:underline;
+}
+
+header{
+position: fixed;
+top:0;
+left:0px;
+width:100%;
+padding:20px 70px;
+display:flex;
+}
+.nav a
+{
+position: relative;
+color:white;
+text-decoration:none;
+font-weight:500;
+margin-left:90px;
+padding:90px;
+text-decoration:underline;
+}
+.nav  .loginbtn
+{
+width:100px;
+height:50px;
+border:3px solid black;
+border-radius:6px;
+background:blue;
+cursor:pointer;
+transition:background-color:0.2ease;
+padding:10px;
+}
+.nav .loginbtn:hover
+{
+background-color:#3B2616;
+}
+.text
+{
+ 
+height:70px;
+padding:10px
+letter-spacing:5px;
+color:white;
+ font-size:30px;
+margin-top:200px;
+}
+ 
+
+
+

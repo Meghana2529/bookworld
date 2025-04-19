@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+  <title>Order Details</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url("p6.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .order-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      width: 450px;
+      max-width: 100%;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-family: 'Lucida Fax', sans-serif;
+      text-decoration: underline;
+      margin-bottom: 20px;
+      color: #ff6347; 
+    }
+
+    label {
+      font-size: 16px;
+      margin-bottom: 8px;
+      display: block;
+      text-align: left;
+      color: white;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .radio-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .radio-group label {
+      font-size: 14px;
+    }
+
+    .btn {
+      width: 120px;
+      height: 45px;
+      margin-top: 20px;
+      border-radius: 20px;
+      background-color: #007acc;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #005fa3;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #dcdcdc;
+    }
+
+    .footer a {
+      color: #cce6ff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      background-color: #333;
+      border-radius: 5px;
+      padding: 12px;
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #555;
+    }
+  </style>
+  <script>
+    function validateOrder() {
+      var address = document.getElementById("address").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+      var cashOnDelivery = document.getElementById("pay1").checked;
+      var onlinePayment = document.getElementById("pay2").checked;
+
+      if (address === "" || phone === "" || (!cashOnDelivery && !onlinePayment)) {
+        alert("Please fill all the fields correctly.");
+      } else {
+        alert("Order Confirmed! We will process your order shortly.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="order-box">
+    <h1>Order Details</h1>
+    <form>
+      <div class="form-group">
+        <label for="address">Shipping Address:</label>
+        <textarea id="address" placeholder="Enter shipping address" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input id="phone" type="text" placeholder="Enter phone number" />
+      </div>
+
+      <div class="form-group radio-group">
+        <label>
+          <input id="pay1" type="radio" name="payment" />
+          Cash on Delivery
+        </label>
+        <label>
+          <input id="pay2" type="radio" name="payment" />
+          Online Payment
+        </label>
+      </div>
+
+      <button type="button" class="btn" onclick="validateOrder()">Confirm Order</button>
+    </form>
+
+    <div class="footer">
+      <a href="home.html" class="back-btn">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
